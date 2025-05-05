@@ -30,16 +30,16 @@ const handleMessage = async (event) => {
     }
     const receivedText = event.message.text;
     const replyToken = event.replyToken;
-    const replyText = `You said: ${receivedText}`;
+    const replyText = `あなたが送ったメッセージ: ${receivedText}`;
     const message = {
         type: 'text',
         text: replyText
     };
     try{
       await client.replyMessage(replyToken, message);
-      console.log('Reply message sent:', replyText);
+      console.log('ユーザーに返信したメッセージ', replyText);
     }catch(error){
-        console.error('Error sending message:', error);
+        console.error('エラーメッセージ:', error);
         return;
     }
 }
